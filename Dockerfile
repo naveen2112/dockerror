@@ -13,4 +13,6 @@ RUN git clone https://github.com/naveen2112/devopsrorbilling.git
 WORKDIR /var/www/devopsrorbilling
 RUN bundle install
 RUN export SECRET_KEY_BASE=$(bundle exec rake secret) && echo "export SECRET_KEY_BASE=$SECRET_KEY_BASE" >> ~/.bashrc
+RUN chmod +X script.sh
+ENTRYPOINT ["./script.sh"]
 
