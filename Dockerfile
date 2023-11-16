@@ -1,4 +1,4 @@
-FROM ruby:2.7.2
+FROM ruby:2.7.3
 RUN gem install rails -v 6.1.3
 RUN apt update -y && \ 
 apt install -y git-core curl zlib1g-dev build-essential \
