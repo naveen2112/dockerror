@@ -13,11 +13,11 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV['DB_NAME']%>
-  username: <%= ENV['DB_USERNAME']%>
-  password: <%= ENV['DB_PASSWORD']%>
-  host: <%= ENV['DB_HOSTNAME']%>
-  port: <%= ENV['DB_PORT']%>
+  database: sfd
+  username: sf
+  password: admin123
+  host: rorbill.cfetpjdspyv9.ap-south-1.rds.amazonaws.com
+  port: 5432
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,8 +29,8 @@ test:
   
 production:
   <<: *default
-  database: <%= ENV['DB_NAME']%>
-  username: <%= ENV['DB_USERNAME']%>
-  password: <%= ENV['DB_PASSWORD']%>
-  host: <%= ENV['DB_HOSTNAME']%>
-  port: <%= ENV['DB_PORT']%>
+  database: postgres
+  username: postgres
+  password: admin123
+  host: rorbill.cfetpjdspyv9.ap-south-1.rds.amazonaws.com
+  port: 5432
