@@ -19,5 +19,9 @@ RUN export DB_USERNAME=postgres >> ~/.bashrc
 RUN export DB_PASSWORD=admin123 >> ~/.bashrc
 RUN export DB_HOSTNAME=rorbill.cfetpjdspyv9.ap-south-1.rds.amazonaws.com >> ~/.bashrc
 RUN export DB_PORT=5432 >> ~/.bashrc
+RUN export RAILS_ENV=production >> ~/.bashrc
+COPY ./script.sh .
+RUN chmod +x ./script.sh
+ENTRYPOINT ["./script.sh"]
 
 
