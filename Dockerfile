@@ -9,8 +9,8 @@ apt-get install libpq-dev -y && \
 apt install -y nodejs npm && \
 npm install -g yarn
 WORKDIR /var/www/
-RUN git clone https://github.com/naveen2112/devopsrorbilling.git
-WORKDIR /var/www/devopsrorbilling
+RUN git clone https://github.com/naveen2112/dockerror.git
+WORKDIR /var/www/dockerror
 RUN bundle install
 ENV RAILS_ENV=production \
 DB_NAME=postgres \
