@@ -14,7 +14,7 @@ RUN git clone https://github.com/naveen2112/dockerror.git
 WORKDIR /var/www/dockerror
 RUN bundle install
 RUN export SECRET_KEY_BASE=$(bundle exec rake secret) && echo "export SECRET_KEY_BASE=$SECRET_KEY_BASE" >> ~/.bashrc
-COPY ./script.sh /home/ubuntu
+COPY ./script.sh .
 RUN chmod +x ./script.sh
 ENTRYPOINT ["./script.sh"]
 CMD ["RAILS_ENV=production", "bundle", "exec", "rails", s"]
