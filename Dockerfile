@@ -14,6 +14,11 @@ RUN git clone https://github.com/naveen2112/dockerror.git
 WORKDIR /var/www/dockerror
 RUN bundle install
 RUN export SECRET_KEY_BASE=$(bundle exec rake secret) && echo "export SECRET_KEY_BASE=$SECRET_KEY_BASE" >> ~/.bashrc
+RUN export DB_NAME=postgres >> ~/.bashrc
+RUN export DB_USERNAME=postgres >> ~/.bashrc
+RUN export DB_PASSWORD=admin123 >> ~/.bashrc
+RUN export DB_HOSTNAME=rorbill.cfetpjdspyv9.ap-south-1.rds.amazonaws.com >> ~/.bashrc
+RUN export DB_PORT=5432 >> ~/.bashrc
 COPY ./script.sh .
 RUN chmod +x ./script.sh
 ENTRYPOINT ["./script.sh"]
