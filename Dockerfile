@@ -20,6 +20,6 @@ DB_PASSWORD=admin123 \
 DB_HOSTNAME=rorbill.cfetpjdspyv9.ap-south-1.rds.amazonaws.com \
 DB_PORT=5432
 RUN export SECRET_KEY_BASE=$(bundle exec rake secret) && echo "export SECRET_KEY_BASE=$SECRET_KEY_BASE" >> ~/.bashrc
-COPY ./script.sh /home/ubuntu
-ENTRYPOINT ["/home/ubuntu/script.sh"]
+COPY ./script.sh .
+ENTRYPOINT ["./script.sh"]
 CMD ["bash", "-c", "RAILS_ENV=production bundle exec rails s"]
