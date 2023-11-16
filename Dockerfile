@@ -12,6 +12,7 @@ WORKDIR /var/www/
 RUN git clone https://github.com/naveen2112/devopsrorbilling.git
 WORKDIR /var/www/devopsrorbilling
 RUN bundle install
+RUN export RAILS_ENV=production
 RUN export SECRET_KEY_BASE=$(bundle exec rake secret) && echo "export SECRET_KEY_BASE=$SECRET_KEY_BASE" >> ~/.bashrc
 RUN RAILS_ENV=production rake db:create
 RUN RAILS_ENV=production rake db:migrate
