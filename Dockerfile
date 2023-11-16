@@ -16,5 +16,5 @@ RUN bundle install
 RUN export SECRET_KEY_BASE=$(bundle exec rake secret) && echo "export SECRET_KEY_BASE=$SECRET_KEY_BASE" >> ~/.bashrc
 COPY ./script.sh .
 RUN chmod +x ./script.sh
-CMD ["./script.sh"]
+ENTRYPOINT ["./script.sh"]
 
