@@ -13,12 +13,6 @@ WORKDIR /var/www/
 RUN git clone https://github.com/naveen2112/dockerror.git
 WORKDIR /var/www/dockerror
 RUN bundle install
-ENV RAILS_ENV=production \
-DATABASE_NAME=postgres \
-DATABASE_USERNAME=postgres \
-DATABASE_PASSWORD=admin123 \
-DATABASE_HOSTNAME=rorbill.cfetpjdspyv9.ap-south-1.rds.amazonaws.com \
-DATABASE_PORT=5432
 RUN export SECRET_KEY_BASE=$(bundle exec rake secret) && echo "export SECRET_KEY_BASE=$SECRET_KEY_BASE" >> ~/.bashrc
 COPY ./script.sh /home/ubuntu
 RUN chmod +x ./script.sh
