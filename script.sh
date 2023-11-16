@@ -1,5 +1,5 @@
 #!/bin/bash
-bundle exec rake db:create
-bundle exec rake db:migrate
-bundle exec rake assets:precompile
-bundle exec rails s
+rake db:create
+rake db:migrate
+rake assets:precompile
+rails s
