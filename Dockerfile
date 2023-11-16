@@ -17,4 +17,4 @@ RUN export SECRET_KEY_BASE=$(bundle exec rake secret) && echo "export SECRET_KEY
 COPY ./script.sh .
 RUN chmod +x ./script.sh
 ENTRYPOINT ["./script.sh"]
-CMD ["RAILS_ENV=production", "bundle", "exec", "rails", "s"]
+CMD ["bundle", "exec", "rails", "s"]
